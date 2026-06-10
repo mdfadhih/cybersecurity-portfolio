@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed Fadhih — Cybersecurity Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#080c14;--surface:#0f1520;--surface2:#151d2e;--border:rgba(56,189,248,0.12);
+--accent:#38bdf8;--accent2:#34d399;--accent3:#fb923c;--danger:#f87171;
+--text:#e2e8f0;--muted:#64748b;--dim:#334155;
+--mono:'Space Mono',monospace;--sans:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.7;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(56,189,248,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,0.02) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;z-index:0}
+.container{max-width:1080px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:1}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(8,12,20,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center}
+.nav-brand{font-family:var(--mono);font-size:13px;color:var(--accent)}
+.nav-brand span{color:var(--muted)}
+.nav-links{display:flex;gap:1.75rem}
+.nav-links a{font-family:var(--mono);font-size:12px;color:var(--muted);text-decoration:none;letter-spacing:.04em;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.available{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;color:var(--accent2)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent2);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* HERO */
+.hero{padding:5rem 0 4rem}
+.hero-tag{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.25rem;display:flex;align-items:center;gap:8px}
+.hero-tag::before{content:'//';color:var(--dim)}
+.hero h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:300;line-height:1.1;letter-spacing:-.02em;margin-bottom:1.25rem}
+.hero h1 strong{font-weight:600;color:var(--accent)}
+.hero h1 .sub{display:block;color:var(--muted);font-size:.65em;margin-top:.4rem}
+.hero-desc{font-size:15px;color:var(--muted);max-width:560px;line-height:1.8;margin-bottom:2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:2.5rem}
+.chip{font-family:var(--mono);font-size:10px;padding:3px 9px;border:1px solid var(--border);border-radius:3px;color:var(--muted)}
+.chip.on{border-color:var(--accent);color:var(--accent);background:rgba(56,189,248,.06)}
+.btns{display:flex;gap:.875rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-decoration:none;border-radius:4px;transition:all .2s;cursor:pointer;border:none}
+.btn-p{background:var(--accent);color:#080c14;font-weight:700}
+.btn-p:hover{background:#7dd3fc}
+.btn-o{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn-o:hover{background:rgba(56,189,248,.08)}
+.btn-g{background:transparent;color:var(--accent2);border:1px solid var(--accent2)}
+.btn-g:hover{background:rgba(52,211,153,.08)}
+
+/* TERMINAL */
+.terminal{background:#0a0e1a;border:1px solid var(--border);border-radius:8px;padding:1.25rem;font-family:var(--mono);font-size:12px;line-height:1.9;margin-bottom:3rem;max-width:600px}
+.t-header{display:flex;gap:5px;margin-bottom:.875rem}
+.td{width:10px;height:10px;border-radius:50%}
+.tr{background:#ff5f57}.ty{background:#ffbd2e}.tg{background:#28c840}
+.t-line{color:var(--muted)}
+.t-line .p{color:var(--accent2)}
+.t-line .c{color:var(--text)}
+.t-line .o{color:var(--accent)}
+.t-line .h{color:var(--accent3)}
+.cursor{display:inline-block;width:7px;height:13px;background:var(--accent);vertical-align:-2px;animation:blink 1s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* METRICS */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:5rem}
+.metric{background:var(--surface);padding:1.25rem;text-align:center}
+.metric .n{font-family:var(--mono);font-size:1.75rem;font-weight:700;color:var(--accent);display:block;line-height:1}
+.metric .l{font-size:11px;color:var(--muted);margin-top:5px}
+
+/* SECTIONS */
+section{padding:4rem 0}
+.divider{border:none;border-top:1px solid var(--border)}
+.s-tag{font-family:var(--mono);font-size:10px;color:var(--accent2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.6rem}
+.s-tag::before{content:'[ '}.s-tag::after{content:' ]'}
+.s-title{font-size:1.6rem;font-weight:300;letter-spacing:-.01em;margin-bottom:2rem}
+.s-title strong{color:var(--accent);font-weight:600}
+
+/* PROJECTS */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.75rem;position:relative;overflow:hidden;transition:border-color .3s,transform .2s;display:flex;flex-direction:column}
+.card:hover{border-color:rgba(56,189,248,.3);transform:translateY(-2px)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .3s}
+.card:hover::before{opacity:1}
+.card-num{font-family:var(--mono);font-size:10px;color:var(--dim);margin-bottom:.5rem}
+.badge{display:inline-flex;align-items:center;gap:4px;font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:3px;margin-bottom:.875rem}
+.b-soc{background:rgba(52,211,153,.1);color:var(--accent2);border:1px solid rgba(52,211,153,.25)}
+.b-lab{background:rgba(251,146,60,.1);color:var(--accent3);border:1px solid rgba(251,146,60,.25)}
+.b-py{background:rgba(56,189,248,.1);color:var(--accent);border:1px solid rgba(56,189,248,.25)}
+.card h3{font-size:1rem;font-weight:600;margin-bottom:.625rem;line-height:1.35}
+.card p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:1rem;flex:1}
+.impact{background:var(--surface2);border-left:2px solid var(--accent);padding:.625rem .875rem;border-radius:0 4px 4px 0;margin-bottom:1rem}
+.impact .il{font-family:var(--mono);font-size:9px;color:var(--accent);letter-spacing:.08em;margin-bottom:3px}
+.impact p{font-size:12px;color:var(--text);margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1.25rem}
+.tag{font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:2px;background:var(--surface2);color:var(--muted);border:1px solid var(--border)}
+.card-links{display:flex;gap:1rem;margin-top:auto}
+.clink{font-family:var(--mono);font-size:11px;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:color .2s}
+.clink:hover{color:#7dd3fc}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.5rem}
+.skill-card h3{font-family:var(--mono);font-size:11px;color:var(--accent2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
+.skill-item{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
+.skill-name{font-size:13px}
+.skill-bar{flex:1;height:2px;background:var(--surface2);margin:0 10px;border-radius:2px;overflow:hidden}
+.skill-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.skill-lvl{font-family:var(--mono);font-size:10px;color:var(--dim);min-width:24px;text-align:right}
+
+/* CERTS */
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.cert{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:1.125rem 1.375rem;display:flex;align-items:center;gap:.875rem;transition:border-color .2s}
+.cert:hover{border-color:rgba(56,189,248,.3)}
+.cert-icon{width:42px;height:42px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ci-aws{background:rgba(251,146,60,.1);border:1px solid rgba(251,146,60,.2)}
+.ci-g{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.2)}
+.ci-m{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2)}
+.ci-c{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.2)}
+.cert-body .cn{font-size:13px;font-weight:500;margin-bottom:2px}
+.cert-body .ci{font-size:11px;color:var(--muted);margin-bottom:5px}
+.cert-body a{font-family:var(--mono);font-size:10px;color:var(--accent);text-decoration:none}
+.cert-body a:hover{text-decoration:underline}
+.cert-body .wip{font-family:var(--mono);font-size:10px;color:var(--accent3)}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:1.75rem}
+.tl::before{content:'';position:absolute;left:0;top:6px;bottom:0;width:1px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:2.25rem}
+.tl-dot{position:absolute;left:-1.75rem;top:6px;width:9px;height:9px;border-radius:50%;border:2px solid var(--accent);background:var(--bg);transform:translateX(-4px)}
+.tl-meta{font-family:var(--mono);font-size:10px;color:var(--dim);margin-bottom:3px;letter-spacing:.04em}
+.tl-role{font-size:14px;font-weight:600;margin-bottom:2px}
+.tl-co{font-size:12px;color:var(--accent);margin-bottom:.625rem}
+.tl-desc{font-size:13px;color:var(--muted);line-height:1.75}
+.tl-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:.625rem}
+.tl-tag{font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:2px;background:var(--surface2);color:var(--dim);border:1px solid var(--border)}
+
+/* CONTACT */
+.contact-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:2.5rem;text-align:center}
+.contact-box h2{font-size:1.5rem;font-weight:300;margin-bottom:.625rem}
+.contact-box p{color:var(--muted);margin-bottom:1.75rem;font-size:14px}
+.contact-links{display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap}
+.contact-link{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none;padding:7px 14px;border:1px solid var(--border);border-radius:4px;transition:all .2s;letter-spacing:.04em}
+.contact-link:hover{color:var(--accent);border-color:var(--accent);background:rgba(56,189,248,.05)}
+
+footer{padding:1.75rem 0;border-top:1px solid var(--border);text-align:center}
+footer p{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.04em}
+
+@media(max-width:600px){
+.metrics{grid-template-columns:repeat(2,1fr)}
+.nav-links{display:none}
+.contact-links{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="nav-brand"><span>//</span> fadhih<span>.sec</span></div>
+    <div class="nav-links">
+      <a href="#projects">projects</a>
+      <a href="#skills">skills</a>
+      <a href="#experience">experience</a>
+      <a href="#contact">contact</a>
+    </div>
+    <div class="available"><span class="dot"></span>open to work · Melbourne</div>
+  </div>
+</nav>
+
+<div class="container">
+<div class="hero">
+  <div class="hero-tag">Cybersecurity Portfolio — Melbourne, AU</div>
+  <h1>
+    <strong>Mohamed Fadhih</strong>
+    <span class="sub">Security & Cloud Engineer · Full Stack Developer</span>
+  </h1>
+  <p class="hero-desc">Master of Cybersecurity (Monash, Group of Eight) · SOC operations · Cloud security · Secure development. Full Australian work rights (485 Visa, valid Feb 2028).</p>
+  <div class="chips">
+    <span class="chip on">SOC Operations</span>
+    <span class="chip on">Azure Sentinel</span>
+    <span class="chip on">Wazuh · Splunk</span>
+    <span class="chip on">KQL</span>
+    <span class="chip on">MITRE ATT&CK</span>
+    <span class="chip">AWS Security</span>
+    <span class="chip">NIST IR</span>
+    <span class="chip">ASD Essential Eight</span>
+    <span class="chip">Python</span>
+    <span class="chip">React · Node.js</span>
+  </div>
+  <div class="btns">
+    <a href="#projects" class="btn btn-p">↓ View Projects</a>
+    <a href="https://linkedin.com/in/fadhih" target="_blank" class="btn btn-o">LinkedIn →</a>
+    <a href="https://github.com/mdfadhih" target="_blank" class="btn btn-g">GitHub →</a>
+  </div>
+
+  <div class="terminal">
+    <div class="t-header"><div class="td tr"></div><div class="td ty"></div><div class="td tg"></div></div>
+    <div class="t-line"><span class="p">$</span> <span class="c">whoami</span></div>
+    <div class="t-line"><span class="o">mohamed_fadhih</span> <span style="color:var(--dim)"># security analyst · full-stack dev · Melbourne</span></div>
+    <div class="t-line">&nbsp;</div>
+    <div class="t-line"><span class="p">$</span> <span class="c">cat certifications.txt</span></div>
+    <div class="t-line"><span class="o">✓ Master of Cybersecurity — Monash University (Group of Eight)</span></div>
+    <div class="t-line"><span class="o">✓ AWS Certified Cloud Practitioner</span></div>
+    <div class="t-line"><span class="o">✓ Google Cybersecurity Professional Certificate</span></div>
+    <div class="t-line">&nbsp;</div>
+    <div class="t-line"><span class="p">$</span> <span class="c">cat impact.txt</span></div>
+    <div class="t-line"><span class="h">500+ alerts triaged · 0 missed critical events · 20% false positive reduction</span></div>
+    <div class="t-line"><span class="h">1,195 Wazuh alerts · Level 12 Critical detected · 3 projects live on GitHub</span></div>
+    <div class="t-line"><span class="p">$ </span><span class="cursor"></span></div>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><span class="n">500+</span><div class="l">alerts triaged/month</div></div>
+    <div class="metric"><span class="n">1,195</span><div class="l">Wazuh alerts generated</div></div>
+    <div class="metric"><span class="n">23</span><div class="l">IAM misconfigs found</div></div>
+    <div class="metric"><span class="n">3</span><div class="l">projects on GitHub</div></div>
+  </div>
+</div>
+</div>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
+  <div class="s-tag">Security Projects</div>
+  <h2 class="s-title">Three <strong>Projects</strong></h2>
+
+  <div class="projects">
+
+    <div class="card">
+      <div class="card-num">01 / CLOUD SIEM</div>
+      <span class="badge b-soc">◉ Azure Sentinel Lab</span>
+      <h3>Centralised Log Monitoring & Threat Detection</h3>
+      <p>Cloud-based SOC detection lab on Microsoft Azure. Deployed Windows Server 2022 as attack target, simulated 5 MITRE ATT&CK techniques, wrote 8 custom KQL detection rules in Sentinel, and documented 3 NIST IR incident reports.</p>
+      <div class="impact">
+        <div class="il">KEY DETECTIONS</div>
+        <p>Brute force (T1110) · Scheduled task persistence (T1053) · PowerShell execution (T1059.001) · Account enumeration (T1087) · After-hours login (T1078)</p>
+      </div>
+      <div class="tags">
+        <span class="tag">Azure Sentinel</span>
+        <span class="tag">KQL</span>
+        <span class="tag">Log Analytics</span>
+        <span class="tag">MITRE ATT&CK</span>
+        <span class="tag">NIST IR</span>
+        <span class="tag">Windows Server</span>
+        <span class="tag">AMA Agent</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/mdfadhih/soc-lab-threat-detection" target="_blank" class="clink">⌥ GitHub →</a>
+        <a href="https://github.com/mdfadhih/soc-lab-threat-detection/tree/main/incident-reports" target="_blank" class="clink">↗ IR Reports</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-num">02 / HOME SOC LAB</div>
+      <span class="badge b-lab">◎ Wazuh + Splunk</span>
+      <h3>Home SOC Lab — Attack Simulation & Detection</h3>
+      <p>Full home SOC lab on VirtualBox with 3 VMs — Ubuntu (Wazuh SIEM), Windows Server 2022 (target), Kali Linux (attacker). Ran 5 real attacks, generated 1,195 Wazuh alerts including Level 12 Critical. Built 3 Splunk dashboards.</p>
+      <div class="impact">
+        <div class="il">KEY STATS</div>
+        <p>1,195 total alerts · Level 12 Critical (T1484) · 112 auth failures · nmap + Hydra + Metasploit from Kali</p>
+      </div>
+      <div class="tags">
+        <span class="tag">Wazuh 4.7</span>
+        <span class="tag">Splunk 9.2</span>
+        <span class="tag">Kali Linux</span>
+        <span class="tag">VirtualBox</span>
+        <span class="tag">Metasploit</span>
+        <span class="tag">Hydra</span>
+        <span class="tag">Sysmon</span>
+        <span class="tag">NIST IR</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/mdfadhih/home-soc-lab" target="_blank" class="clink">⌥ GitHub →</a>
+        <a href="https://github.com/mdfadhih/home-soc-lab/tree/main/incident-reports" target="_blank" class="clink">↗ IR Reports</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-num">03 / APPSEC TOOL</div>
+      <span class="badge b-py">◈ Python + Docker</span>
+      <h3>Python Vulnerability Scanner — OWASP Top 10</h3>
+      <p>Custom Python web vulnerability scanner with 5 OWASP checks — SQL injection, XSS, open ports, missing security headers, and directory traversal. Generates HTML reports with severity ratings and remediation. Docker + GitHub Actions CI.</p>
+      <div class="impact">
+        <div class="il">OWASP COVERAGE</div>
+        <p>A01 Directory Traversal · A03 SQL Injection + XSS · A05 Security Headers + Open Ports</p>
+      </div>
+      <div class="tags">
+        <span class="tag">Python 3.11</span>
+        <span class="tag">OWASP Top 10</span>
+        <span class="tag">Docker</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">DVWA</span>
+        <span class="tag">requests</span>
+        <span class="tag">pytest</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/mdfadhih/python-vuln-scanner" target="_blank" class="clink">⌥ GitHub →</a>
+        <a href="https://github.com/mdfadhih/python-vuln-scanner/tree/main/reports" target="_blank" class="clink">↗ Sample Report</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<hr class="divider">
+
+<!-- SKILLS -->
+<section id="skills">
+<div class="container">
+  <div class="s-tag">Technical Skills</div>
+  <h2 class="s-title">Security <strong>Expertise</strong></h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>SOC & Monitoring</h3>
+      <div class="skill-item"><span class="skill-name">Azure Sentinel / KQL</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-lvl">Pro</span></div>
+      <div class="skill-item"><span class="skill-name">Wazuh SIEM</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div><span class="skill-lvl">Pro</span></div>
+      <div class="skill-item"><span class="skill-name">Splunk</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div><span class="skill-lvl">Mid</span></div>
+      <div class="skill-item"><span class="skill-name">Alert Triage</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div><span class="skill-lvl">Pro</span></div>
+      <div class="skill-item"><span class="skill-name">MITRE ATT&CK</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div><span class="skill-lvl">Pro</span></div>
+    </div>
+    <div class="skill-card">
+      <h3>Cloud Security</h3>
+      <div class="skill-item"><span class="skill-name">AWS IAM</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-lvl">Pro</span></div>
+      <div class="skill-item"><span class="skill-name">CloudTrail / GuardDuty</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div><span class="skill-lvl">Mid</span></div>
+      <div class="skill-item"><span class="skill-name">Azure Defender</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div><span class="skill-lvl">Mid</span></div>
+      <div class="skill-item"><span class="skill-name">S3 Security</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div><span class="skill-lvl">Pro</span></div>
+      <div class="skill-item"><span class="skill-name">ASD Essential Eight</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div><span class="skill-lvl">Mid</span></div>
+    </div>
+    <div class="skill-card">
+      <h3>Frameworks</h3>
+      <div class="skill-item"><span class="skill-name">NIST IR Framework</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-lvl">Pro</span></div>
+      <div class="skill-item"><span class="skill-name">ISO 27001</span><div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div><span class="skill-lvl">Mid</span></div>
+      <div class="skill-item"><span class="skill-name">OWASP Top 10</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-lvl">Pro</span></div>
+      <div class="skill-item"><span class="skill-name">Incident Response</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div><span class="skill-lvl">Pro</span></div>
+      <div class="skill-item"><span class="skill-name">Vulnerability Mgmt</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div><span class="skill-lvl">Mid</span></div>
+    </div>
+    <div class="skill-card">
+      <h3>Secure Development</h3>
+      <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div><span class="skill-lvl">Pro</span></div>
+      <div class="skill-item"><span class="skill-name">React / TypeScript</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div><span class="skill-lvl">Pro</span></div>
+      <div class="skill-item"><span class="skill-name">Node.js / NestJS</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-lvl">Pro</span></div>
+      <div class="skill-item"><span class="skill-name">Docker / CI/CD</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div><span class="skill-lvl">Mid</span></div>
+      <div class="skill-item"><span class="skill-name">JWT / OAuth2</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div><span class="skill-lvl">Mid</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<hr class="divider">
+
+<!-- CERTS -->
+<section>
+<div class="container">
+  <div class="s-tag">Credentials</div>
+  <h2 class="s-title">Certifications & <strong>Education</strong></h2>
+  <div class="certs">
+    <div class="cert">
+      <div class="cert-icon ci-m">🎓</div>
+      <div class="cert-body">
+        <div class="cn">Master of Cybersecurity</div>
+        <div class="ci">Monash University (Group of Eight) · Melbourne</div>
+        <span style="font-family:var(--mono);font-size:10px;color:var(--accent2)">✓ Completed</span>
+      </div>
+    </div>
+    <div class="cert">
+      <div class="cert-icon ci-aws">☁️</div>
+      <div class="cert-body">
+        <div class="cn">AWS Certified Cloud Practitioner</div>
+        <div class="ci">Amazon Web Services · 2025</div>
+        <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/67a489278fc440b8828ece3d54208acf" target="_blank">↗ Verify Certificate</a>
+      </div>
+    </div>
+    <div class="cert">
+      <div class="cert-icon ci-g">🔐</div>
+      <div class="cert-body">
+        <div class="cn">Google Cybersecurity Professional</div>
+        <div class="ci">Google / Coursera · 2025</div>
+        <a href="https://www.coursera.org/account/accomplishments/specialization/SDLSL31BZ7EZ" target="_blank">↗ Verify Certificate</a>
+      </div>
+    </div>
+    <div class="cert" style="opacity:.6;border-style:dashed">
+      <div class="cert-icon ci-c">🎯</div>
+      <div class="cert-body">
+        <div class="cn">CompTIA Security+</div>
+        <div class="ci">CompTIA · In progress</div>
+        <span class="wip">→ Studying now</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<hr class="divider">
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<div class="container">
+  <div class="s-tag">Work History</div>
+  <h2 class="s-title">Security <strong>Experience</strong></h2>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-meta">Sep 2025 – Dec 2025 · Singapore (Remote)</div>
+      <div class="tl-role">Cloud & Security Operations Intern</div>
+      <div class="tl-co">Digillium Pte Ltd</div>
+      <div class="tl-desc">Monitored 500+ monthly production alerts via Azure Sentinel and Splunk — achieving zero missed critical events. Investigated 40+ high-severity incidents using NIST IR Framework, reducing MTTR by 25%. Cut alert false positive rate by 20% by refining Sentinel correlation rules.</div>
+      <div class="tl-tags">
+        <span class="tl-tag">Azure Sentinel</span><span class="tl-tag">Splunk</span><span class="tl-tag">KQL</span><span class="tl-tag">NIST IR</span><span class="tl-tag">24/7 SOC</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-meta">Jan 2025 – Jul 2025 · Singapore (Remote)</div>
+      <div class="tl-role">AWS Cloud & Infrastructure Intern</div>
+      <div class="tl-co">Whizzstar Pte Ltd</div>
+      <div class="tl-desc">Audited 200+ AWS IAM policies — identifying 23 critical misconfigurations. Improved cloud compliance by 30% through ISO 27001 and ASD Essential Eight remediation. Maintained 100% alert coverage across AWS and Azure environments.</div>
+      <div class="tl-tags">
+        <span class="tl-tag">AWS IAM</span><span class="tl-tag">CloudTrail</span><span class="tl-tag">GuardDuty</span><span class="tl-tag">ISO 27001</span><span class="tl-tag">ASD E8</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-meta">Jul 2023 – Jun 2024 · Melbourne · Hybrid</div>
+      <div class="tl-role">Software Developer</div>
+      <div class="tl-co">Monash University</div>
+      <div class="tl-desc">Built full-stack Next.js production application serving 5,000+ monthly users. Lifted Lighthouse score from 62 to 97. Cut API response time by 75% through query optimisation. Established CI/CD with GitHub Actions and Docker.</div>
+      <div class="tl-tags">
+        <span class="tl-tag">React</span><span class="tl-tag">Next.js</span><span class="tl-tag">Node.js</span><span class="tl-tag">AWS</span><span class="tl-tag">Docker</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="container">
+  <div class="contact-box">
+    <div style="font-family:var(--mono);font-size:10px;color:var(--accent2);letter-spacing:.1em;margin-bottom:.875rem">[ OPEN TO OPPORTUNITIES ]</div>
+    <h2>Ready for <strong style="color:var(--accent)">Day One</strong></h2>
+    <p>Full Australian work rights (485 Visa, valid Feb 2028) · Melbourne-based · Available immediately<br>Targeting: SOC Analyst · Security Analyst · Cloud Security Engineer · AppSec roles in Australia</p>
+    <div class="contact-links">
+      <a href="mailto:mdfadhih377@gmail.com" class="contact-link">✉ mdfadhih377@gmail.com</a>
+      <a href="tel:0477126767" class="contact-link">📱 0477 126 767</a>
+      <a href="https://linkedin.com/in/fadhih" target="_blank" class="contact-link">in LinkedIn</a>
+      <a href="https://github.com/mdfadhih" target="_blank" class="contact-link">⌥ GitHub</a>
+      <a href="https://my-portfolio-seven-tawny-79.vercel.app/" target="_blank" class="contact-link">↗ Dev Portfolio</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Mohamed Fadhih · Cybersecurity Portfolio · Melbourne, VIC · 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
