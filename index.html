@@ -109,7 +109,8 @@ section{padding:4rem 0}
 .skill-name{font-size:13px}
 .skill-bar{flex:1;height:2px;background:var(--surface2);margin:0 10px;border-radius:2px;overflow:hidden}
 .skill-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
-.skill-lvl{font-family:var(--mono);font-size:10px;color:var(--dim);min-width:24px;text-align:right}
+.skill-lvl{font-family:var(--mono);font-size:10px;color:var(--dim);min-width:56px;text-align:right}
+.skill-legend{font-family:var(--mono);font-size:10px;color:var(--dim);margin-top:1.25rem}
 
 /* CERTS */
 .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
@@ -135,6 +136,8 @@ section{padding:4rem 0}
 .tl-role{font-size:14px;font-weight:600;margin-bottom:2px}
 .tl-co{font-size:12px;color:var(--accent);margin-bottom:.625rem}
 .tl-desc{font-size:13px;color:var(--muted);line-height:1.75}
+.tl-desc ul{padding-left:1.1rem}
+.tl-desc li{margin-bottom:.35rem}
 .tl-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:.625rem}
 .tl-tag{font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:2px;background:var(--surface2);color:var(--dim);border:1px solid var(--border)}
 
@@ -176,47 +179,46 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:
   <div class="hero-tag">Cybersecurity Portfolio — Melbourne, AU</div>
   <h1>
     <strong>Mohamed Fadhih</strong>
-    <span class="sub">Security & Cloud Engineer · Full Stack Developer</span>
+    <span class="sub">Cybersecurity Analyst · SOC &amp; Cloud Security (early career)</span>
   </h1>
-  <p class="hero-desc">Master of Cybersecurity (Monash, Group of Eight) · SOC operations · Cloud security · Secure development. Full Australian work rights (485 Visa, valid Feb 2028).</p>
+  <p class="hero-desc">Master of Cybersecurity (Monash, Group of Eight) · SOC operations · Cloud security · Previously a full-stack developer. Full Australian work rights (485 Visa, valid Feb 2028).</p>
   <div class="chips">
     <span class="chip on">SOC Operations</span>
-    <span class="chip on">Azure Sentinel</span>
+    <span class="chip on">Microsoft Sentinel</span>
     <span class="chip on">Wazuh · Splunk</span>
     <span class="chip on">KQL</span>
-    <span class="chip on">MITRE ATT&CK</span>
+    <span class="chip on">MITRE ATT&amp;CK</span>
     <span class="chip">AWS Security</span>
-    <span class="chip">NIST IR</span>
-    <span class="chip">ASD Essential Eight</span>
+    <span class="chip">NIST SP 800-61</span>
     <span class="chip">Python</span>
     <span class="chip">React · Node.js</span>
   </div>
   <div class="btns">
     <a href="#projects" class="btn btn-p">↓ View Projects</a>
-    <a href="https://linkedin.com/in/fadhih" target="_blank" class="btn btn-o">LinkedIn →</a>
+    <a href="https://www.linkedin.com/in/fadhih" target="_blank" class="btn btn-o">LinkedIn →</a>
     <a href="https://github.com/mdfadhih" target="_blank" class="btn btn-g">GitHub →</a>
   </div>
 
   <div class="terminal">
     <div class="t-header"><div class="td tr"></div><div class="td ty"></div><div class="td tg"></div></div>
     <div class="t-line"><span class="p">$</span> <span class="c">whoami</span></div>
-    <div class="t-line"><span class="o">mohamed_fadhih</span> <span style="color:var(--dim)"># security analyst · full-stack dev · Melbourne</span></div>
+    <div class="t-line"><span class="o">mohamed_fadhih</span> <span style="color:var(--dim)"># cybersecurity analyst · Melbourne</span></div>
     <div class="t-line">&nbsp;</div>
     <div class="t-line"><span class="p">$</span> <span class="c">cat certifications.txt</span></div>
     <div class="t-line"><span class="o">✓ Master of Cybersecurity — Monash University (Group of Eight)</span></div>
     <div class="t-line"><span class="o">✓ AWS Certified Cloud Practitioner</span></div>
     <div class="t-line"><span class="o">✓ Google Cybersecurity Professional Certificate</span></div>
     <div class="t-line">&nbsp;</div>
-    <div class="t-line"><span class="p">$</span> <span class="c">cat impact.txt</span></div>
-    <div class="t-line"><span class="h">500+ alerts triaged · 0 missed critical events · 20% false positive reduction</span></div>
-    <div class="t-line"><span class="h">1,195 Wazuh alerts · Level 12 Critical detected · 3 projects live on GitHub</span></div>
+    <div class="t-line"><span class="p">$</span> <span class="c">cat highlights.txt</span></div>
+    <div class="t-line"><span class="h">500+ alerts triaged a month · 23 AWS misconfigurations remediated</span></div>
+    <div class="t-line"><span class="h">1,195 Wazuh alerts · Level 12 Critical detected · 3 projects on GitHub</span></div>
     <div class="t-line"><span class="p">$ </span><span class="cursor"></span></div>
   </div>
 
   <div class="metrics">
     <div class="metric"><span class="n">500+</span><div class="l">alerts triaged/month</div></div>
-    <div class="metric"><span class="n">1,195</span><div class="l">Wazuh alerts generated</div></div>
-    <div class="metric"><span class="n">23</span><div class="l">IAM misconfigs found</div></div>
+    <div class="metric"><span class="n">1,195</span><div class="l">Wazuh alerts generated (lab)</div></div>
+    <div class="metric"><span class="n">23</span><div class="l">AWS misconfigs remediated</div></div>
     <div class="metric"><span class="n">3</span><div class="l">projects on GitHub</div></div>
   </div>
 </div>
@@ -234,19 +236,19 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:
 
     <div class="card">
       <div class="card-num">01 / CLOUD SIEM</div>
-      <span class="badge b-soc">◉ Azure Sentinel Lab</span>
-      <h3>Centralised Log Monitoring & Threat Detection</h3>
-      <p>Cloud-based SOC detection lab on Microsoft Azure. Deployed Windows Server 2022 as attack target, simulated 5 MITRE ATT&CK techniques, wrote 8 custom KQL detection rules in Sentinel, and documented 3 NIST IR incident reports.</p>
+      <span class="badge b-soc">◉ Microsoft Sentinel Lab</span>
+      <h3>Centralised Log Monitoring &amp; Threat Detection</h3>
+      <p>Cloud-based SOC detection lab on Microsoft Azure. Simulated attack activity against a Windows Server 2022 VM, wrote 5 custom KQL detection rules in Sentinel mapped to MITRE ATT&amp;CK, and documented 3 incident reports aligned to NIST SP 800-61.</p>
       <div class="impact">
-        <div class="il">KEY DETECTIONS</div>
-        <p>Brute force (T1110) · Scheduled task persistence (T1053) · PowerShell execution (T1059.001) · Account enumeration (T1087) · After-hours login (T1078)</p>
+        <div class="il">RULES COVERED</div>
+        <p>Brute force (T1110) · Scheduled task persistence (T1053) · PowerShell execution (T1059.001) · Account discovery (T1087) · Valid accounts after hours (T1078)</p>
       </div>
       <div class="tags">
-        <span class="tag">Azure Sentinel</span>
+        <span class="tag">Microsoft Sentinel</span>
         <span class="tag">KQL</span>
         <span class="tag">Log Analytics</span>
-        <span class="tag">MITRE ATT&CK</span>
-        <span class="tag">NIST IR</span>
+        <span class="tag">MITRE ATT&amp;CK</span>
+        <span class="tag">NIST SP 800-61</span>
         <span class="tag">Windows Server</span>
         <span class="tag">AMA Agent</span>
       </div>
@@ -259,8 +261,8 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:
     <div class="card">
       <div class="card-num">02 / HOME SOC LAB</div>
       <span class="badge b-lab">◎ Wazuh + Splunk</span>
-      <h3>Home SOC Lab — Attack Simulation & Detection</h3>
-      <p>Full home SOC lab on VirtualBox with 3 VMs — Ubuntu (Wazuh SIEM), Windows Server 2022 (target), Kali Linux (attacker). Ran 5 real attacks, generated 1,195 Wazuh alerts including Level 12 Critical. Built 3 Splunk dashboards.</p>
+      <h3>Home SOC Lab — Attack Simulation &amp; Detection</h3>
+      <p>Home SOC lab on VirtualBox with 3 VMs — Ubuntu (Wazuh SIEM), Windows Server 2022 (target), Kali Linux (attacker). Ran 5 simulated attacks, generating 1,195 Wazuh alerts including one Level 12 Critical alert. Built 3 Splunk dashboards and wrote 3 incident reports.</p>
       <div class="impact">
         <div class="il">KEY STATS</div>
         <p>1,195 total alerts · Level 12 Critical (T1484) · 112 auth failures · nmap + Hydra + Metasploit from Kali</p>
@@ -273,7 +275,7 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:
         <span class="tag">Metasploit</span>
         <span class="tag">Hydra</span>
         <span class="tag">Sysmon</span>
-        <span class="tag">NIST IR</span>
+        <span class="tag">NIST SP 800-61</span>
       </div>
       <div class="card-links">
         <a href="https://github.com/mdfadhih/home-soc-lab" target="_blank" class="clink">⌥ GitHub →</a>
@@ -284,15 +286,15 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:
     <div class="card">
       <div class="card-num">03 / APPSEC TOOL</div>
       <span class="badge b-py">◈ Python + Docker</span>
-      <h3>Python Vulnerability Scanner — OWASP Top 10</h3>
-      <p>Custom Python web vulnerability scanner with 5 OWASP checks — SQL injection, XSS, open ports, missing security headers, and directory traversal. Generates HTML reports with severity ratings and remediation. Docker + GitHub Actions CI.</p>
+      <h3>Python Vulnerability Scanner — 5 OWASP Checks</h3>
+      <p>Small Python web vulnerability scanner implementing 5 OWASP-related checks — SQL injection, XSS, open ports, missing security headers, and directory traversal. Generates HTML reports with severity ratings and remediation. Tested against DVWA, packaged in Docker, with GitHub Actions CI.</p>
       <div class="impact">
         <div class="il">OWASP COVERAGE</div>
         <p>A01 Directory Traversal · A03 SQL Injection + XSS · A05 Security Headers + Open Ports</p>
       </div>
       <div class="tags">
         <span class="tag">Python 3.11</span>
-        <span class="tag">OWASP Top 10</span>
+        <span class="tag">OWASP</span>
         <span class="tag">Docker</span>
         <span class="tag">GitHub Actions</span>
         <span class="tag">DVWA</span>
@@ -315,41 +317,39 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:
 <section id="skills">
 <div class="container">
   <div class="s-tag">Technical Skills</div>
-  <h2 class="s-title">Security <strong>Expertise</strong></h2>
+  <h2 class="s-title">Security <strong>Skills</strong></h2>
   <div class="skills-grid">
     <div class="skill-card">
-      <h3>SOC & Monitoring</h3>
-      <div class="skill-item"><span class="skill-name">Azure Sentinel / KQL</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-lvl">Pro</span></div>
-      <div class="skill-item"><span class="skill-name">Wazuh SIEM</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div><span class="skill-lvl">Pro</span></div>
-      <div class="skill-item"><span class="skill-name">Splunk</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div><span class="skill-lvl">Mid</span></div>
-      <div class="skill-item"><span class="skill-name">Alert Triage</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div><span class="skill-lvl">Pro</span></div>
-      <div class="skill-item"><span class="skill-name">MITRE ATT&CK</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div><span class="skill-lvl">Pro</span></div>
+      <h3>SOC &amp; Monitoring</h3>
+      <div class="skill-item"><span class="skill-name">Sentinel / KQL</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div><span class="skill-lvl">Working</span></div>
+      <div class="skill-item"><span class="skill-name">Splunk</span><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div><span class="skill-lvl">Working</span></div>
+      <div class="skill-item"><span class="skill-name">Wazuh</span><div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div><span class="skill-lvl">Lab</span></div>
+      <div class="skill-item"><span class="skill-name">Alert Triage</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div><span class="skill-lvl">Working</span></div>
+      <div class="skill-item"><span class="skill-name">MITRE ATT&amp;CK</span><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div><span class="skill-lvl">Working</span></div>
     </div>
     <div class="skill-card">
       <h3>Cloud Security</h3>
-      <div class="skill-item"><span class="skill-name">AWS IAM</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-lvl">Pro</span></div>
-      <div class="skill-item"><span class="skill-name">CloudTrail / GuardDuty</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div><span class="skill-lvl">Mid</span></div>
-      <div class="skill-item"><span class="skill-name">Azure Defender</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div><span class="skill-lvl">Mid</span></div>
-      <div class="skill-item"><span class="skill-name">S3 Security</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div><span class="skill-lvl">Pro</span></div>
-      <div class="skill-item"><span class="skill-name">ASD Essential Eight</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div><span class="skill-lvl">Mid</span></div>
+      <div class="skill-item"><span class="skill-name">AWS IAM</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div><span class="skill-lvl">Working</span></div>
+      <div class="skill-item"><span class="skill-name">S3 Security</span><div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div><span class="skill-lvl">Working</span></div>
+      <div class="skill-item"><span class="skill-name">CloudTrail / GuardDuty</span><div class="skill-bar"><div class="skill-fill" style="width:45%"></div></div><span class="skill-lvl">Familiar</span></div>
+      <div class="skill-item"><span class="skill-name">Least Privilege</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div><span class="skill-lvl">Working</span></div>
     </div>
     <div class="skill-card">
-      <h3>Frameworks</h3>
-      <div class="skill-item"><span class="skill-name">NIST IR Framework</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-lvl">Pro</span></div>
-      <div class="skill-item"><span class="skill-name">ISO 27001</span><div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div><span class="skill-lvl">Mid</span></div>
-      <div class="skill-item"><span class="skill-name">OWASP Top 10</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-lvl">Pro</span></div>
-      <div class="skill-item"><span class="skill-name">Incident Response</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div><span class="skill-lvl">Pro</span></div>
-      <div class="skill-item"><span class="skill-name">Vulnerability Mgmt</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div><span class="skill-lvl">Mid</span></div>
+      <h3>Frameworks &amp; IR</h3>
+      <div class="skill-item"><span class="skill-name">NIST SP 800-61</span><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div><span class="skill-lvl">Working</span></div>
+      <div class="skill-item"><span class="skill-name">Incident Response</span><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div><span class="skill-lvl">Working</span></div>
+      <div class="skill-item"><span class="skill-name">OWASP Top 10</span><div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div><span class="skill-lvl">Lab</span></div>
     </div>
     <div class="skill-card">
-      <h3>Secure Development</h3>
-      <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div><span class="skill-lvl">Pro</span></div>
-      <div class="skill-item"><span class="skill-name">React / TypeScript</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div><span class="skill-lvl">Pro</span></div>
-      <div class="skill-item"><span class="skill-name">Node.js / NestJS</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-lvl">Pro</span></div>
-      <div class="skill-item"><span class="skill-name">Docker / CI/CD</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div><span class="skill-lvl">Mid</span></div>
-      <div class="skill-item"><span class="skill-name">JWT / OAuth2</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div><span class="skill-lvl">Mid</span></div>
+      <h3>Development &amp; Automation</h3>
+      <div class="skill-item"><span class="skill-name">React / TypeScript</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-lvl">Strong</span></div>
+      <div class="skill-item"><span class="skill-name">Node.js / REST APIs</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><span class="skill-lvl">Strong</span></div>
+      <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div><span class="skill-lvl">Working</span></div>
+      <div class="skill-item"><span class="skill-name">Docker / CI/CD</span><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div><span class="skill-lvl">Working</span></div>
+      <div class="skill-item"><span class="skill-name">JWT / OAuth 2.0</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div><span class="skill-lvl">Working</span></div>
     </div>
   </div>
+  <p class="skill-legend">Strong = used professionally for years · Working = used in internships or projects · Lab = home-lab experience · Familiar = foundational knowledge</p>
 </div>
 </section>
 
@@ -359,7 +359,7 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:
 <section>
 <div class="container">
   <div class="s-tag">Credentials</div>
-  <h2 class="s-title">Certifications & <strong>Education</strong></h2>
+  <h2 class="s-title">Certifications &amp; <strong>Education</strong></h2>
   <div class="certs">
     <div class="cert">
       <div class="cert-icon ci-m">🎓</div>
@@ -403,36 +403,69 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:
 <section id="experience">
 <div class="container">
   <div class="s-tag">Work History</div>
-  <h2 class="s-title">Security <strong>Experience</strong></h2>
+  <h2 class="s-title">Professional <strong>Experience</strong></h2>
   <div class="tl">
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <div class="tl-meta">Sep 2025 – Dec 2025 · Singapore (Remote)</div>
-      <div class="tl-role">Cloud & Security Operations Intern</div>
+      <div class="tl-meta">Sep 2025 – Dec 2025 · Singapore (Remote internship)</div>
+      <div class="tl-role">Cloud &amp; Security Operations Intern</div>
       <div class="tl-co">Digillium Pte Ltd</div>
-      <div class="tl-desc">Monitored 500+ monthly production alerts via Azure Sentinel and Splunk — achieving zero missed critical events. Investigated 40+ high-severity incidents using NIST IR Framework, reducing MTTR by 25%. Cut alert false positive rate by 20% by refining Sentinel correlation rules.</div>
+      <div class="tl-desc">
+        <ul>
+          <li>Triaged 500+ security alerts a month in Microsoft Sentinel and Splunk, escalating those needing action with documented findings.</li>
+          <li>Investigated 40+ high-severity incidents using alert and log data, recording findings, escalation details and response steps.</li>
+          <li>Worked with incident response playbooks aligned with NIST SP 800-61.</li>
+        </ul>
+      </div>
       <div class="tl-tags">
-        <span class="tl-tag">Azure Sentinel</span><span class="tl-tag">Splunk</span><span class="tl-tag">KQL</span><span class="tl-tag">NIST IR</span><span class="tl-tag">24/7 SOC</span>
+        <span class="tl-tag">Microsoft Sentinel</span><span class="tl-tag">Splunk</span><span class="tl-tag">Alert Triage</span><span class="tl-tag">NIST SP 800-61</span>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <div class="tl-meta">Jan 2025 – Jul 2025 · Singapore (Remote)</div>
-      <div class="tl-role">AWS Cloud & Infrastructure Intern</div>
-      <div class="tl-co">Whizzstar Pte Ltd</div>
-      <div class="tl-desc">Audited 200+ AWS IAM policies — identifying 23 critical misconfigurations. Improved cloud compliance by 30% through ISO 27001 and ASD Essential Eight remediation. Maintained 100% alert coverage across AWS and Azure environments.</div>
+      <div class="tl-meta">Jan 2025 – Jul 2025 · Singapore (Remote internship)</div>
+      <div class="tl-role">AWS Cloud &amp; Infrastructure Intern</div>
+      <div class="tl-co">Whizzstar</div>
+      <div class="tl-desc">
+        <ul>
+          <li>Audited 200+ AWS IAM policies for excessive permissions, supporting a move towards least privilege.</li>
+          <li>Identified and remediated 23 critical security misconfigurations in AWS.</li>
+          <li>Wrote Python scripts to automate cloud compliance and security checks.</li>
+        </ul>
+      </div>
       <div class="tl-tags">
-        <span class="tl-tag">AWS IAM</span><span class="tl-tag">CloudTrail</span><span class="tl-tag">GuardDuty</span><span class="tl-tag">ISO 27001</span><span class="tl-tag">ASD E8</span>
+        <span class="tl-tag">AWS IAM</span><span class="tl-tag">Least Privilege</span><span class="tl-tag">Python</span>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-meta">Jul 2023 – Jun 2024 · Melbourne · Hybrid</div>
-      <div class="tl-role">Software Developer</div>
+      <div class="tl-role">Casual Research Assistant (Software Development)</div>
       <div class="tl-co">Monash University</div>
-      <div class="tl-desc">Built full-stack Next.js production application serving 5,000+ monthly users. Lifted Lighthouse score from 62 to 97. Cut API response time by 75% through query optimisation. Established CI/CD with GitHub Actions and Docker.</div>
+      <div class="tl-desc">
+        <ul>
+          <li>Implemented JWT/OAuth 2.0 authentication and role-based access control across 15+ REST API integrations.</li>
+          <li>Built a GitHub Actions and Docker CI/CD pipeline with 85% test coverage, reducing deployment failures by 30%.</li>
+          <li>Raised Lighthouse performance from 62 to 97 and cut average response time from 800ms to 200ms.</li>
+        </ul>
+      </div>
       <div class="tl-tags">
-        <span class="tl-tag">React</span><span class="tl-tag">Next.js</span><span class="tl-tag">Node.js</span><span class="tl-tag">AWS</span><span class="tl-tag">Docker</span>
+        <span class="tl-tag">JWT / OAuth 2.0</span><span class="tl-tag">RBAC</span><span class="tl-tag">GitHub Actions</span><span class="tl-tag">Docker</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-meta">Nov 2020 – Feb 2023 · Chennai, India</div>
+      <div class="tl-role">Full Stack Developer</div>
+      <div class="tl-co">GrandBiz IT Solutions</div>
+      <div class="tl-desc">
+        <ul>
+          <li>Supported 8 production applications (10,000+ daily requests), cutting defects by 30% through Sentry error tracking and root-cause debugging.</li>
+          <li>Reduced latency from 3.2s to 0.4s by redesigning the REST API structure and adding frontend pagination.</li>
+        </ul>
+      </div>
+      <div class="tl-tags">
+        <span class="tl-tag">React</span><span class="tl-tag">TypeScript</span><span class="tl-tag">REST APIs</span><span class="tl-tag">Sentry</span>
       </div>
     </div>
   </div>
@@ -446,12 +479,12 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:
 <div class="container">
   <div class="contact-box">
     <div style="font-family:var(--mono);font-size:10px;color:var(--accent2);letter-spacing:.1em;margin-bottom:.875rem">[ OPEN TO OPPORTUNITIES ]</div>
-    <h2>Ready for <strong style="color:var(--accent)">Day One</strong></h2>
-    <p>Full Australian work rights (485 Visa, valid Feb 2028) · Melbourne-based · Available immediately<br>Targeting: SOC Analyst · Security Analyst · Cloud Security Engineer · AppSec roles in Australia</p>
+    <h2>Looking for my <strong style="color:var(--accent)">first SOC role</strong></h2>
+    <p>Full Australian work rights (485 Visa, valid Feb 2028) · Melbourne-based<br>Targeting: SOC Analyst · Security Analyst · Cloud Security roles in Australia</p>
     <div class="contact-links">
       <a href="mailto:mdfadhih377@gmail.com" class="contact-link">✉ mdfadhih377@gmail.com</a>
       <a href="tel:0477126767" class="contact-link">📱 0477 126 767</a>
-      <a href="https://linkedin.com/in/fadhih" target="_blank" class="contact-link">in LinkedIn</a>
+      <a href="https://www.linkedin.com/in/fadhih" target="_blank" class="contact-link">in LinkedIn</a>
       <a href="https://github.com/mdfadhih" target="_blank" class="contact-link">⌥ GitHub</a>
       <a href="https://my-portfolio-seven-tawny-79.vercel.app/" target="_blank" class="contact-link">↗ Dev Portfolio</a>
     </div>
